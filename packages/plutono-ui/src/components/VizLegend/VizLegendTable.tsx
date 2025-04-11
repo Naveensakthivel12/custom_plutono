@@ -94,19 +94,23 @@ export const VizLegendTable: FC<VizLegendTableProps> = ({
 const getStyles = (theme: PlutonoTheme) => ({
   table: css`
     width: 100%;
-    margin-left: ${theme.spacing.sm};
+    th:first-child {
+      width: 100%;
+      border-bottom: 1px solid ${theme.colors.border1};
+    }
   `,
   header: css`
     color: ${theme.colors.textBlue};
     font-weight: ${theme.typography.weight.semibold};
     border-bottom: 1px solid ${theme.colors.border1};
-    padding: ${theme.spacing.xxs} ${theme.spacing.sm};
+    padding: 2px 8px;
     text-align: right;
+    white-space: nowrap;
   `,
   headerSortable: css`
     cursor: pointer;
   `,
   sortIcon: css`
-    margin-left: ${theme.spacing.sm};
+    margin-left: ${theme.spacing.xs};
   `,
 });
