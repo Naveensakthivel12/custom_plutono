@@ -40,8 +40,9 @@ export const VizLegendListItem: React.FunctionComponent<Props> = ({ item, onSeri
       >
         {item.label}
       </div>
-
-      {item.getDisplayValues && <VizLegendStatsList stats={item.getDisplayValues()} />}
+      <div className={cx(item.disabled && styles.labelDisabled)}>
+        {item.getDisplayValues && <VizLegendStatsList stats={item.getDisplayValues()} />}
+      </div>
     </div>
   );
 };
