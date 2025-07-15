@@ -35,7 +35,7 @@ export const VizLayout: VizLayoutComponentType = ({ width, height, legend, child
     return <div style={containerStyle}>{children(width, height)}</div>;
   }
 
-  const { placement, maxHeight, maxWidth } = legend.props;
+  const { placement, maxWidth } = legend.props;
 
   let size: VizSize | null = null;
 
@@ -48,11 +48,11 @@ export const VizLayout: VizLayoutComponentType = ({ width, height, legend, child
   switch (placement) {
     case 'bottom':
       containerStyle.flexDirection = 'column';
-      legendStyle.maxHeight = maxHeight;
-
-      if (legendMeasure) {
-        size = { width, height: height - legendMeasure.height };
-      }
+      const legendHeight = height * 0.2;
+      const vizHeight = height - legendHeight;
+      size = { width, height: vizHeight };
+      legendStyle.height = `${legendHeight}px`;
+      legendStyle.overflowY = 'auto';
       break;
     case 'right':
       containerStyle.flexDirection = 'row';
