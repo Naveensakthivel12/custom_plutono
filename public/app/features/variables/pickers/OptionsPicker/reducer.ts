@@ -34,7 +34,7 @@ export const initialState: OptionsPickerState = {
   multi: false,
 };
 
-export const OPTIONS_LIMIT = 4500;
+export const OPTIONS_LIMIT = 5100;
 
 const getTags = (model: VariableWithMultiSupport) => {
   if (isQuery(model) && Array.isArray(model.tags)) {
