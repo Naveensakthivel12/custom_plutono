@@ -37,4 +37,8 @@ Plutono v7.5.37-4:
         -  public/app/features/variables/pickers/OptionsPicker/reducer.ts
   
 -----------------------------------------------------------------------
-  
+
+Plutono v7.5.37-5:
+  - Increased the Timeout from 30sec to 5mins.
+  -> Modified files:
+        - conf/defaults.ini
